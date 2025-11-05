@@ -1,0 +1,10 @@
+h (Hubble parameter)
+Omega_m (Matter density parameter)
+N (Number of coeval files to read)
+z1 path/to/file1
+z2 path/to/file2
+z3 path/to/file3
+...
+...
+...
+zN path/to/fileN
