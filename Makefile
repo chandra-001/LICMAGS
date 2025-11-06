@@ -2,6 +2,10 @@
 CC = g++
 LDFLAGS = -L/usr/local/lib/
 CPPFLAGS = -I/usr/local/include/
+#CC = clang++
+#LDFLAGS = -L/opt/homebrew/lib/
+#CPPFLAGS = -I/opt/homebrew/include/
+
 CFLAGS = -std=c++11
 GSLFLAGS = -lgsl -lgslcblas
 SRC = ./src
