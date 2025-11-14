@@ -13,7 +13,8 @@ SRC = ./src
 _OBJS = $(patsubst $(SRC)/%.cc, %.o, $(wildcard $(SRC)/*.cc))
 OBJDIR := objdir
 OBJS := $(patsubst %, $(OBJDIR)/%, $(_OBJS))
-OPT = -O2
+#OPT = -O2
+OPT = -O2 -march=native -mtune=native -flto -funroll-loops -fomit-frame-pointer -ftree-vectorize -fno-math-errno -fno-trapping-math -falign-functions=32 -fno-rtti -pipe
 
 vpath %.cc $(SRC)
 
