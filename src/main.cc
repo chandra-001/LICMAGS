@@ -2,19 +2,19 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <valarray>
 #include <vector>
 
 #include <omp.h>
 
 double *read_coeval (std::string, uint64_t &, uint64_t &, uint64_t &, float &,
-                     int32_t &, std::valarray<float> &);
+                     int32_t &, std::vector<float> &);
 uint64_t interpolate (int64_t, int64_t, int64_t, double, double *, int32_t,
-                      std::valarray<float> &, std::valarray<float> &);
+                      const std::vector<float> &, std::vector<float> &);
 void write_lightcone (std::string, uint64_t &, uint64_t &, uint64_t &, float &,
-                      std::valarray<float> &);
+                      std::vector<float> &);
 
 int
 main (int argc, char *argv[])
@@ -25,8 +25,8 @@ main (int argc, char *argv[])
   int32_t N;
   float grid_size;
 
-  std::valarray<float> v;
-  std::valarray<float> Light_Cone;
+  std::vector<float> v;
+  std::vector<float> Light_Cone;
 
   std::string fname = argv[1];
 
@@ -41,6 +41,7 @@ main (int argc, char *argv[])
   T = omp_get_wtime () - T;
   std::cout << "Done\n\n";
 
+  std::cout << std::setprecision (4);
   std::cout << "Time elapsed for interpolation: " << T << " sec\n\n";
 
   fname = argv[2];

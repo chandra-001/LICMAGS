@@ -5,14 +5,14 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include <valarray>
+#include <vector>
 
 double h;
 double Omega_m;
 
 double *
 read_coeval (std::string filename, uint64_t &N1, uint64_t &N2, uint64_t &N3,
-             float &grid_size, int32_t &N, std::valarray<float> &v)
+             float &grid_size, int32_t &N, std::vector<float> &v)
 {
   std::ifstream inFile, in;
   std::string fname (filename);

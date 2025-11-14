@@ -26,6 +26,7 @@ generate_redshifts (double z_start, double z_end, double grid_size, double h,
   double k3;
   double k4;
 
+  // Generate redshifts with Runge-Kutta 4th order soln.
   for (double z_dummy = z_start; z_dummy <= z_end;)
     {
       z.push_back (z_dummy);
